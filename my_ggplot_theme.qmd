@@ -1,0 +1,29 @@
+---
+title: "my_ggplot_theme"
+author: "Eva Newby"
+format: html
+editor: visual
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r}
+library(tidyverse)
+library(palmerpenguins)
+```
+
+```{r}
+ggplot(data = penguins, aes(x = flipper_length_mm, y = body_mass_g))+
+  geom_point() +
+  labs(title = "Penguins!")+
+  theme(title = element_text(size = 16, color = "purple"),
+        plot.background = element_rect(fill = "black"),
+        panel.background = element_rect(fill = "cyan"),
+        axis.text = element_text(color = "pink"),
+        panel.grid.major = element_line(color = "yellow"),
+        panel.grid.minor = element_line(color = "green"))
+
+
+
+```
+
